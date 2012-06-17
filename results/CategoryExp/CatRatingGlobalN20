@@ -1,7 +1,0 @@
-Started to create proximity matrices offline
-Finished to create proximity matrices
-similarity dict has been created
-Average Jaccard Distance of Genre-Rating = 0.651753 [N=20.000000]
-PDF: [  0  19  38 137 314 655 856 848 462  88]
-Bins: [ 0.   0.1  0.2  0.3  0.4  0.5  0.6  0.7  0.8  0.9  1. ]
-Expected Value 0.602780

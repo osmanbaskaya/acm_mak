@@ -111,7 +111,7 @@ class Experiment(object):
             print "Finished to create proximity matrices"
         elif ptype == 'cb':
             if offline:
-                print "Started to create proximity matrices offline"
+                print "Started to create proximity matrices offline for CB"
                 self.cb_prox = load_data(PKL + 'cb_prox.pkl')
                 #self.cb_prox = load_data(PKL + 'cb_prox_new.pkl')
             else:
@@ -120,7 +120,7 @@ class Experiment(object):
             print "Finished to create proximity matrices"
         elif ptype == 'cf':
             if offline:
-                print "Started to create proximity matrices offline"
+                print "Started to create proximity matrices offline for CF"
                 self.cf_prox = load_data(PKL + 'cf_prox.pkl')
                 #self.cf_prox = load_data(PKL + 'cf_prox_new.pkl')
             else:
@@ -297,7 +297,8 @@ class TopNCorrExperiment(Experiment):
 class CategoryCorrExperiment(Experiment):
 
 
-    """ This experiment is for [Genre - Rating Correlation] and [Genre - Content Correlation]
+    """ This experiment is for [Genre - Rating Correlation] and 
+    [Genre - Content Correlation]
      
      """
 
@@ -308,7 +309,11 @@ class CategoryCorrExperiment(Experiment):
 
     def lightweight_setup(self):
         if self.approach == 'cf':
-            self.cf_matrix = load_data(PKL + 'cf.pkl')
+            pass
+            #self.cf_matrix = load_data(PKL + 'cf.pkl')
+        elif self.approach == 'cb':
+            pass
+            
         
         self.create_approach_matrix()
         self.cat_mat = create_category_matrix()
@@ -369,8 +374,8 @@ class CategoryCorrExperiment(Experiment):
         cat_data, mid_dict = create_category_database()
         avgJacMov, jac_list = self.take_hits(cat_data, mid_dict, N)
         results = [avgJacMov, jac_list]
-        filename = PKL + "Category%d.pkl" % N
-        utils.write_pickle_obj(filename, results)
+        #filename = PKL + "Category%dfor%s.pkl" % (N, self.approach.upper())
+        #utils.write_pickle_obj(filename, results)
 
         return results
 
@@ -418,10 +423,10 @@ class CategoryCorrExperiment(Experiment):
         return load_data(filename)
 
     @staticmethod
-    def draw_histogram(arr, N, *args, **kwargs):
+    def draw_histogram(arr, N, approach, *args, **kwargs):
         pl.xlabel('Jaccard Distance')
         pl.ylabel('Number of Items')
-        pl.title("Histogram of Jaccard Distance and Number of Movies [N = %d]" % N)
+        pl.title("Histogram of Jaccard Distance and Number of Movies [N = %d, %s]" % (N, approach))
         pdf, bins, patches = pl.hist(arr, bins=np.linspace(0, 1, 11), *args, **kwargs)
         #pl.axis([0, 15, 0, 2000])
         #E = (np.array(pdf) * np.array(bins)) / float(N)
@@ -535,12 +540,12 @@ def category_interval():
 
 
 def category_all():
-    n = 20
+    n = 100
     e = CategoryCorrExperiment(setup_mode='lightweight', approach='cb')
     [avgJacTotal, jac_list] = e.test_category_accuracy(N=n)
     #hit_list = CategoryCorrExperiment.get_hit_list(N=n, harsh=h)
-    print "Average Jaccard Distance of Genre-Rating = %f [N=%d]" % (avgJacTotal, n)
-    CategoryCorrExperiment.draw_histogram(jac_list, N=n)
+    print "Average Jaccard Distance of Genre-Wiki = %f [N=%d]" % (avgJacTotal, n)
+    CategoryCorrExperiment.draw_histogram(jac_list, N=n, approach=e.approach)
 
 def topN_interval():
     n = 20
@@ -562,9 +567,9 @@ def main():
     #ex.test_corr_sparsity(draw=True, interval=100)
 
     #topN_all()
-    topN_interval()
+    #topN_interval()
     #category_interval()
-    #category_all()
+    category_all()
     #fanhypo()
 
 

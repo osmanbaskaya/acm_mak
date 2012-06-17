@@ -1,0 +1,168 @@
+Correlation Test between 0 - 16
+((0.01831576022477344, 2.4545454532890576e-09), 'Number of item 461')
+
+Correlation Test between 16 - 35
+((0.1005828996100691, 1.0122207816523696e-117), 'Number of item 324')
+
+Correlation Test between 35 - 57
+((0.1614852543785901, 1.2980459042042392e-266), 'Number of item 304')
+
+Correlation Test between 57 - 82
+((0.13393043750069003, 6.7497262040827781e-115), 'Number of item 240')
+
+Correlation Test between 82 - 111
+((0.16948795802590369, 1.768467911789061e-167), 'Number of item 229')
+
+Correlation Test between 111 - 144
+((0.1674595500099183, 7.2609884858257875e-124), 'Number of item 199')
+
+Correlation Test between 144 - 182
+((0.2086255355437453, 2.4313273565741772e-204), 'Number of item 205')
+
+Correlation Test between 182 - 225
+((0.18995464858378208, 5.1266108887940149e-147), 'Number of item 191')
+
+Correlation Test between 225 - 273
+((0.19315565433851517, 3.6301036640583852e-111), 'Number of item 163')
+
+Correlation Test between 273 - 326
+((0.19912634813440003, 1.2068978763794937e-105), 'Number of item 154')
+
+Correlation Test between 326 - 385
+((0.13378732566601353, 3.298617421593119e-41), 'Number of item 142')
+
+Correlation Test between 385 - 450
+((0.25029019961480786, 9.4746530713153702e-101), 'Number of item 119')
+
+Correlation Test between 450 - 521
+((0.19685996220872962, 2.5787224025951057e-56), 'Number of item 113')
+
+Correlation Test between 521 - 598
+((0.24631946234691698, 1.1937897113480998e-51), 'Number of item 86')
+
+Correlation Test between 598 - 680
+((0.20347961111598317, 2.2606899023765513e-32), 'Number of item 82')
+
+Correlation Test between 680 - 768
+((0.21791794536726822, 3.4897115857186751e-31), 'Number of item 75')
+
+Correlation Test between 768 - 862
+((0.2038408014826249, 1.664310675415322e-17), 'Number of item 59')
+
+Correlation Test between 862 - 961
+((0.17783774266985528, 3.6573023320898978e-10), 'Number of item 50')
+
+Correlation Test between 961 - 1064
+((0.26051468399637007, 3.8528132572718074e-16), 'Number of item 44')
+
+Correlation Test between 1064 - 1172
+((-0.021076267448387302, 0.52703803576735608), 'Number of item 43')
+
+Correlation Test between 1172 - 1283
+((0.16387164398398049, 0.004430653490260548), 'Number of item 25')
+
+Correlation Test between 1283 - 1397
+((0.097254339299827602, 0.0687778552800513), 'Number of item 27')
+
+Correlation Test between 1397 - 1514
+((0.17911323365658713, 0.01907722868970449), 'Number of item 19')
+
+Correlation Test between 1514 - 1632
+((-0.074910772696808806, 0.66413358893531715), 'Number of item 9')
+
+Correlation Test between 1632 - 1751
+((0.39605214084743556, 2.8884201939009639e-05), 'Number of item 15')
+
+Correlation Test between 1751 - 1870
+((0.63342289313331146, 0.011240783357505738), 'Number of item 6')
+
+Correlation Test between 1988 - 2105
+((-0.11209715769680746, 0.83255855716032601), 'Number of item 4')
+
+Correlation Test between 2105 - 2219
+((0.69785956096504043, 0.50827191620449474), 'Number of item 3')
+
+Correlation Test between 2219 - 2330
+((0.010096173024178005, 0.95339769835101629), 'Number of item 9')
+
+Correlation Test between 2438 - 2541
+((0.38902508856734724, 0.26652399302814661), 'Number of item 5')
+
+Correlation Test between 2541 - 2640
+((0.64687350097089891, 0.55215233441347866), 'Number of item 3')
+
+Correlation Test between 2640 - 2734
+((0.88894892048581708, 0.3028726173305154), 'Number of item 3')
+
+
+
+Correlation Test between 0 - 70
+((0.099988733022523354, 0.0), 'Number of item 1232')
+Correlation Test between 70 - 140
+((0.16165366160537126, 0.0), 'Number of item 498')
+Correlation Test between 140 - 210
+((0.2066168206027951, 0.0), 'Number of item 354')
+Correlation Test between 210 - 279
+((0.18859110628635209, 5.1864084193288471e-257), 'Number of item 255')
+Correlation Test between 279 - 349
+((0.15672832307280535, 3.4902026722511244e-87), 'Number of item 178')
+Correlation Test between 349 - 419
+((0.22364610961452622, 5.6786397389259164e-153), 'Number of item 165')
+Correlation Test between 419 - 488
+((0.18204125757313935, 3.9418259808572716e-55), 'Number of item 121')
+Correlation Test between 488 - 558
+((0.25065312076736634, 3.0035695387513979e-44), 'Number of item 78')
+Correlation Test between 558 - 628
+((0.26752393123426355, 3.886634008627329e-49), 'Number of item 77')
+Correlation Test between 628 - 698
+((0.13662484706884431, 7.9534280322873768e-12), 'Number of item 71')
+Correlation Test between 698 - 767
+((0.29245819330193501, 5.8729958378909242e-34), 'Number of item 58')
+Correlation Test between 767 - 837
+((0.24304448836180201, 2.2123764843879655e-15), 'Number of item 46')
+Correlation Test between 837 - 907
+((0.18711036533597081, 1.1580039726058898e-06), 'Number of item 37')
+Correlation Test between 907 - 976
+((0.12206328427791933, 0.0084154518569849734), 'Number of item 31')
+Correlation Test between 976 - 1046
+((0.29938238521808608, 1.8548645471960836e-10), 'Number of item 30')
+Correlation Test between 1046 - 1116
+((0.0038195258730973855, 0.94099892974066057), 'Number of item 28')
+Correlation Test between 1116 - 1186
+((0.10918288427202673, 0.033831417154631907), 'Number of item 28')
+Correlation Test between 1186 - 1255
+((0.02874566252825592, 0.73973555632854193), 'Number of item 17')
+Correlation Test between 1255 - 1325
+((0.30782050855108467, 0.039680505946271712), 'Number of item 10')
+Correlation Test between 1325 - 1395
+((-0.021689324089753482, 0.75468419100453032), 'Number of item 21')
+Correlation Test between 1395 - 1464
+((0.14855656730088473, 0.19427036780920948), 'Number of item 13')
+Correlation Test between 1464 - 1534
+((0.060166612484615828, 0.76102724600274552), 'Number of item 8')
+Correlation Test between 1534 - 1604
+((-0.030255835563946117, 0.93387591288531513), 'Number of item 5')
+Correlation Test between 1604 - 1674
+((-0.29181733131113735, 0.19930101703619471), 'Number of item 7')
+Correlation Test between 1674 - 1743
+((0.55302869874614358, 8.1576272047672292e-05), 'Number of item 10')
+Correlation Test between 1743 - 1813
+((0.37743524682123447, 0.2822664665049584), 'Number of item 5')
+Correlation Test between 1813 - 1952
+((nan, nan), 'Number of item 2')
+Correlation Test between 1952 - 2092
+((-0.97226873585147178, 0.15027568780904454), 'Number of item 3')
+Correlation Test between 2092 - 2231
+((0.043607870376062313, 0.87736339381254524), 'Number of item 6')
+Correlation Test between 2231 - 2301
+((0.073634912010638445, 0.83979416456659062), 'Number of item 5')
+Correlation Test between 2301 - 2371
+((-0.69090851122380459, 0.51442146116459142), 'Number of item 3')
+Correlation Test between 2371 - 2510
+((nan, nan), 'Number of item 2')
+Correlation Test between 2510 - 2580
+((0.48684899846770052, 0.32742345112957527), 'Number of item 4')
+Correlation Test between 2580 - 2650
+((-0.079545444114407143, 0.94930624071358716), 'Number of item 3')
+Correlation Test between 2719 - 2998
+((0.21620165852941484, 0.86126627207252093), 'Number of item 3')

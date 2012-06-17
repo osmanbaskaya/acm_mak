@@ -1,0 +1,100 @@
+Correlation Test between 0 - 16
+((0.01877242186987807, 3.8691032295659724e-10), 'Number of item 472')
+Correlation Test between 16 - 35
+((0.094101872296659131, 5.19815009107544e-107), 'Number of item 330')
+Correlation Test between 35 - 57
+((0.17130245790845233, 7.968297438397801e-283), 'Number of item 295')
+Correlation Test between 57 - 83
+((0.14924876456648445, 6.065038465386437e-157), 'Number of item 252')
+Correlation Test between 83 - 112
+((0.17167843726666782, 1.3307973291117231e-161), 'Number of item 222')
+Correlation Test between 112 - 146
+((0.156947829711129, 4.942520767442586e-121), 'Number of item 210')
+Correlation Test between 146 - 184
+((0.20917844637695332, 2.8621132135906955e-182), 'Number of item 193')
+Correlation Test between 184 - 227
+((0.21087294104767743, 7.1197284703060578e-176), 'Number of item 188')
+Correlation Test between 227 - 275
+((0.19110964876354264, 3.7837866329809433e-114), 'Number of item 167')
+Correlation Test between 275 - 329
+((0.17740686209415704, 1.1966665711649312e-78), 'Number of item 149')
+Correlation Test between 329 - 389
+((0.14705252771434735, 8.9778583358774354e-56), 'Number of item 151')
+Correlation Test between 389 - 454
+((0.25277841475442953, 9.5357796907574534e-98), 'Number of item 116')
+Correlation Test between 454 - 525
+((0.1922018300110819, 1.3667083142881598e-46), 'Number of item 105')
+Correlation Test between 525 - 602
+((0.21444009209721621, 1.522421403304341e-37), 'Number of item 84')
+Correlation Test between 602 - 685
+((0.17525966477789837, 1.9102889048497747e-25), 'Number of item 84')
+Correlation Test between 685 - 773
+((0.23888038015252303, 2.3407440130953308e-36), 'Number of item 74')
+Correlation Test between 773 - 868
+((0.18750847453568642, 5.2850865102461624e-15), 'Number of item 59')
+Correlation Test between 868 - 967
+((0.13956230915379067, 4.1076886611202862e-06), 'Number of item 47')
+Correlation Test between 967 - 1071
+((0.24009162842364001, 1.9027832346808543e-14), 'Number of item 45')
+Correlation Test between 1071 - 1179
+((0.010387354328808015, 0.75525666168747796), 'Number of item 43')
+Correlation Test between 1179 - 1291
+((0.12842347515467631, 0.051252588976444434), 'Number of item 22')
+Correlation Test between 1291 - 1406
+((0.097984537315782411, 0.057000096058853783), 'Number of item 28')
+Correlation Test between 1406 - 1523
+((0.23410569560458902, 0.0020574115495748347), 'Number of item 19')
+Correlation Test between 1523 - 1642
+((-0.18832779118270379, 0.33719233905977514), 'Number of item 8')
+Correlation Test between 1642 - 1761
+((0.41349284118205176, 2.679070606602078e-06), 'Number of item 16')
+Correlation Test between 1761 - 1881
+((0.58234212765360105, 0.077322613630343179), 'Number of item 5')
+Correlation Test between 1881 - 2000
+((nan, nan), 'Number of item 2')
+Correlation Test between 2000 - 2117
+((-0.40061141531796146, 0.73759548260183849), 'Number of item 3')
+Correlation Test between 2117 - 2232
+((0.20974245315365944, 0.56084519790747078), 'Number of item 5')
+Correlation Test between 2232 - 2344
+((0.052398095399340719, 0.82153629212756529), 'Number of item 7')
+Correlation Test between 2344 - 2452
+((nan, nan), 'Number of item 2')
+Correlation Test between 2452 - 2556
+((0.53460918588497641, 0.27448374005795789), 'Number of item 4')
+Correlation Test between 2556 - 2655
+((0.4128777889057455, 0.23568332750145871), 'Number of item 5')
+Correlation Test between 2655 - 2749
+1 or less item
+Correlation Test between 2749 - 2838
+1 or less item
+Correlation Test between 2838 - 2921
+1 or less item
+Correlation Test between 2921 - 2998
+((nan, nan), 'Number of item 2')
+Correlation Test between 2998 - 3069
+1 or less item
+Correlation Test between 3069 - 3134
+1 or less item
+Correlation Test between 3134 - 3193
+1 or less item
+Correlation Test between 3193 - 3247
+1 or less item
+Correlation Test between 3247 - 3295
+1 or less item
+Correlation Test between 3295 - 3339
+1 or less item
+Correlation Test between 3339 - 3377
+1 or less item
+Correlation Test between 3377 - 3411
+1 or less item
+Correlation Test between 3411 - 3440
+1 or less item
+Correlation Test between 3440 - 3466
+1 or less item
+Correlation Test between 3466 - 3488
+1 or less item
+Correlation Test between 3488 - 3507
+1 or less item
+Correlation Test between 3507 - 3523
+1 or less item

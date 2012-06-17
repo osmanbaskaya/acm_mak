@@ -6,10 +6,12 @@ __author__ = "Osman Baskaya"
 
 
 from operator import itemgetter
-from experiment import PKL, load_data
+from utils import load_data
 import utils
-from experiment import FanHypoExperiment
+from mediawikifetcher import PATH
+import experiment
 
+PKL = PATH + 'pkl/'
 
 
 """ This module provides some concepts such as User, Movie
@@ -29,7 +31,7 @@ movie_genre_dict = {}
 def _create_movgenre_dict():
 
     global movie_genre_dict
-    movie_genre_dict = FanHypoExperiment.get_movie_genre_dict()
+    movie_genre_dict = experiment.FanHypoExperiment.get_movie_genre_dict()
     
 
 def _load_dbs():

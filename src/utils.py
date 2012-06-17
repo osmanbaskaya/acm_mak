@@ -14,6 +14,7 @@ from sys import stderr
 from random import randint
 import pylab as pl
 import numpy as np
+import pickle
 
 def writedict2file(d, filename='dict.dat'):
 
@@ -304,6 +305,25 @@ def getTopN(mat, r, N=20, rev=True):
         r = row number
         N = Number of id
     """
+
+def get_ex_instance(filename):
+    pkl_file = open(filename, 'rb')
+    return pickle.load(pkl_file)
+
+def load_data(filename):
+    return get_ex_instance(filename)
+
+def create_category_matrix():
+    from experiment import create_category_database
+    c, d = create_category_database()
+    n = len(c.keys()) #number of categories (genres)
+    m = len(d.keys()) #number of movies
+    mat = np.mat(np.zeros([m,n])) # m x n matrix.
+    for i, genre in enumerate(c.keys()):
+        #print i, genre
+        movies = list(c[genre])
+        mat[movies, i] = 1
+    return mat
 
 def main():
     #createCF()

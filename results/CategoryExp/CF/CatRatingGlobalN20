@@ -1,0 +1,7 @@
+Started to create proximity matrices offline for CF
+Finished to create proximity matrices
+Similarity dict has been created for cf
+Average Jaccard Distance of Genre-Wiki = 0.456015 [N=20]
+PDF: [115 352 408 477 573 650 432 203 138  69]
+Bins: [ 0.   0.1  0.2  0.3  0.4  0.5  0.6  0.7  0.8  0.9  1. ]
+Expected Value 0.406175

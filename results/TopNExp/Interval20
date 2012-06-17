@@ -1,0 +1,37 @@
+Started to create proximity matrices offline
+Finished to create proximity matrices
+cb dict has been calculated
+0 - 100 | Number of Movies: 1486
+1.00942126514
+100 - 200 | Number of Movies: 573
+1.93019197208
+200 - 300 | Number of Movies: 355
+2.05070422535
+300 - 400 | Number of Movies: 252
+2.1746031746
+400 - 500 | Number of Movies: 172
+2.70348837209
+500 - 600 | Number of Movies: 116
+2.89655172414
+600 - 700 | Number of Movies: 100
+2.67
+700 - 800 | Number of Movies: 80
+2.775
+800 - 900 | Number of Movies: 58
+2.93103448276
+900 - 1000 | Number of Movies: 47
+3.40425531915
+1000 - 1100 | Number of Movies: 40
+3.225
+1100 - 1200 | Number of Movies: 34
+3.85294117647
+1200 - 1300 | Number of Movies: 20
+4.05
+1300 - 1400 | Number of Movies: 27
+3.59259259259
+1400 - 1600 | Number of Movies: 26
+3.38461538462
+1600 - 1800 | Number of Movies: 22
+3.95454545455
+1800 - 2400 | Number of Movies: 20
+4.25

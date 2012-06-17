@@ -1,0 +1,7 @@
+Started to create proximity matrices offline
+Finished to create proximity matrices
+cb dict has been calculated
+PDF: [1201  800  507  308  208  150   83   49   42   21   18   10    7    7    5
+    1    0    0    0    0    0]
+Bins: [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21]
+Expected Value 1.824993

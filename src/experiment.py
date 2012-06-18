@@ -19,6 +19,7 @@ from mediawikifetcher import DATABASE
 from mediawikifetcher import DELIMITER
 import pylab as pl
 import cf_models
+import random
 
 
 PKL = PATH + 'pkl/'
@@ -194,7 +195,7 @@ class TopNCorrExperiment(Experiment):
             #print "dictionaries are also saved."
 
 
-    def take_hits(self, N, movies=None):
+    def take_hits(self, N, randomized, movies=None):
 
         N = N + 1 # The most similar element is itself.
 
@@ -204,7 +205,10 @@ class TopNCorrExperiment(Experiment):
         hits = []
         for movie in movies:
             n1 = set(self.cb_simsorted_dict[movie][1:N])
-            n2 = set(self.cf_simsorted_dict[movie][1:N])
+            if randomized: # for significance tests...
+                n2 = set(random.sample(xrange(1,3416), N))
+            else:
+                n2 = set(self.cf_simsorted_dict[movie][1:N])
 
             common_items = n1.intersection(n2)
             hits.append(len(common_items))
@@ -212,16 +216,14 @@ class TopNCorrExperiment(Experiment):
         return hits
 
 
-
-
-    def test_TopN(self, N=100):
+    def test_TopN(self, randomized, N=100):
         
         if self.cb_simsorted_dict is None or \
                         self.cf_simsorted_dict is None:
 
             self.create_sorted_dict()
 
-        hits = self.take_hits(N=N) 
+        hits = self.take_hits(N=N, randomized=randomized) 
         filename = PKL + "TopN%d.pkl" % (N)
         utils.write_pickle_obj(filename, hits)
 
@@ -243,10 +245,12 @@ class TopNCorrExperiment(Experiment):
             movies_compare = utils.get_itemID_between_intervals(mat, low, up)
             num_movies = len(movies_compare)
             if num_movies >= min_item:
-                print "%d - %d | Number of Movies: %d" % (low, up, num_movies)
                 mean = sum(self.take_hits(N=N, movies=movies_compare)) / float(num_movies)
                 values.append(mean)
-                print mean
+                
+                #print "%d - %d | Number of Movies: %d" % (low, up, num_movies)
+                #print mean
+                print "%d-%d %f" % (low+1, up, mean)
                 inters.append((low+up)/2)
 
                 low = up
@@ -254,15 +258,19 @@ class TopNCorrExperiment(Experiment):
 
 
     @staticmethod
-    def get_hit_list(N=100):
+    def get_hit_list(N=100, offline=True, randomized=False):
+        
 
         filename = PKL + "TopN%d.pkl" % N
-        try:
-            return load_data(filename)
-        except IOError:
-            e = TopNCorrExperiment()
-            hit_list = e.test_TopN(N=N)
-            return hit_list
+        if offline:
+            try:
+                return load_data(filename)
+            except IOError:
+                pass # no need to do smt here.
+
+        e = TopNCorrExperiment()
+        hit_list = e.test_TopN(N=N, randomized=randomized)
+        return hit_list
 
 
     
@@ -303,6 +311,7 @@ class CategoryCorrExperiment(Experiment):
      """
 
     def __init__(self, setup_mode=None, approach='cf', corr_func='pearson'):
+        
         self.sim_dict = None
         self.approach = approach.lower() # This indicate which approach is tested | cf or cb
         super(CategoryCorrExperiment, self).__init__(setup_mode, corr_func)
@@ -310,7 +319,7 @@ class CategoryCorrExperiment(Experiment):
     def lightweight_setup(self):
         if self.approach == 'cf':
             pass
-            #self.cf_matrix = load_data(PKL + 'cf.pkl')
+            self.cf_matrix = load_data(PKL + 'cf.pkl')
         elif self.approach == 'cb':
             pass
             
@@ -336,7 +345,7 @@ class CategoryCorrExperiment(Experiment):
                 exit(-1)
 
 
-    def take_hits(self, cat_data, mid_dict, N, movies=None):
+    def take_hits(self, cat_data, mid_dict, N, randomized, movies=None):
 
         N = N + 1 # The most similar element is itself.
         
@@ -353,7 +362,10 @@ class CategoryCorrExperiment(Experiment):
             jac = 0 # jaccard score of movies
             
             mov_genre = self.cat_mat[movid]
-            neighbors = set(self.sim_dict[movid][1:N])
+            if random: # Random test, verify the significance of results.
+                neighbors = random.sample(xrange(1, 3417), N)
+            else: 
+                neighbors = set(self.sim_dict[movid][1:N])
             for neighbor in neighbors:
                 n_genre = self.cat_mat[neighbor]
                 jac = jac + jaccard(mov_genre, n_genre)
@@ -369,10 +381,11 @@ class CategoryCorrExperiment(Experiment):
         total = total / m # Avg jaccard of movies.
         return (total, jac_list)
 
-    def test_category_accuracy(self, N=100):
+    def test_category_accuracy(self, N=100, randomized=False):
 
         cat_data, mid_dict = create_category_database()
-        avgJacMov, jac_list = self.take_hits(cat_data, mid_dict, N)
+        avgJacMov, jac_list = self.take_hits(cat_data, \
+                                              mid_dict,N,randomized=randomized)
         results = [avgJacMov, jac_list]
         #filename = PKL + "Category%dfor%s.pkl" % (N, self.approach.upper())
         #utils.write_pickle_obj(filename, results)
@@ -403,15 +416,19 @@ class CategoryCorrExperiment(Experiment):
             movies_compare = utils.get_itemID_between_intervals(mat, low, up)
             num_movies = len(movies_compare)
             if num_movies >= min_item:
-                print "%d - %d | Number of Movies: %d" % (low, up, num_movies)
 
                 [total, jac_list] = self.take_hits(cat_data, mid_dict, N=N, movies=movies_compare)
                 mean = total
 
                 values.append(mean)
-                print mean
+                
+                #print "%d - %d | Number of Movies: %d" % (low, up, num_movies)
+                #print mean
+                print "%d-%d %f" % (low+1, up, mean)
+
                 inters.append((low+up)/2)
                 low = up
+
 
         CategoryCorrExperiment.draw_catN_corr(inters, values, N=N)
         return (inters, values)
@@ -534,31 +551,31 @@ def fanhypo():
     f.test_fanHypo(lower=1, upper=5)
 
 def category_interval():
-    n = 20
+    n = 100
     e = CategoryCorrExperiment(setup_mode='lightweight', approach='cf')
     e.test_category_accuracy_interval(N=n)
 
 
 def category_all():
     n = 100
-    e = CategoryCorrExperiment(setup_mode='lightweight', approach='cb')
+    e = CategoryCorrExperiment(setup_mode='lightweight', approach='cf')
     [avgJacTotal, jac_list] = e.test_category_accuracy(N=n)
     #hit_list = CategoryCorrExperiment.get_hit_list(N=n, harsh=h)
     print "Average Jaccard Distance of Genre-Wiki = %f [N=%d]" % (avgJacTotal, n)
     CategoryCorrExperiment.draw_histogram(jac_list, N=n, approach=e.approach)
 
 def topN_interval():
-    n = 20
+    n = 100
     e = TopNCorrExperiment(setup_mode='lightweight')
     e.create_sorted_dict()
     e.test_TopN_intervals(N=n)
 
 def topN_all():
 
-    n = 20
+    n = 100
     #e = TopNCorrExperiment()
     #hit_list = e.test_TopN(N=n)
-    hit_list = TopNCorrExperiment.get_hit_list(N=n)
+    hit_list = TopNCorrExperiment.get_hit_list(N=n, offline=False, randomized=False)
     TopNCorrExperiment.draw_histogram(hit_list, N=n)
 
 def main():
@@ -566,10 +583,10 @@ def main():
     #ex.create_proximity_matrices()
     #ex.test_corr_sparsity(draw=True, interval=100)
 
-    #topN_all()
+    topN_all()
     #topN_interval()
     #category_interval()
-    category_all()
+    #category_all()
     #fanhypo()
 
 

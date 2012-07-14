@@ -195,7 +195,7 @@ class TopNCorrExperiment(Experiment):
             #print "dictionaries are also saved."
 
 
-    def take_hits(self, N, randomized, movies=None):
+    def take_hits(self, N, randomized=False, movies=None):
 
         N = N + 1 # The most similar element is itself.
 
@@ -345,7 +345,7 @@ class CategoryCorrExperiment(Experiment):
                 exit(-1)
 
 
-    def take_hits(self, cat_data, mid_dict, N, randomized, movies=None):
+    def take_hits(self, cat_data, mid_dict, N, randomized=False, movies=None):
 
         N = N + 1 # The most similar element is itself.
         
@@ -362,13 +362,13 @@ class CategoryCorrExperiment(Experiment):
             jac = 0 # jaccard score of movies
             
             mov_genre = self.cat_mat[movid]
-            if random: # Random test, verify the significance of results.
+            if randomized: # Random test, verify the significance of results.
                 neighbors = random.sample(xrange(1, 3417), N)
             else: 
                 neighbors = set(self.sim_dict[movid][1:N])
             for neighbor in neighbors:
                 n_genre = self.cat_mat[neighbor]
-                jac = jac + jaccard(mov_genre, n_genre)
+                jac = jac + (1 - jaccard(mov_genre, n_genre)) # similarity
 
             jac = jac / N # Avg Jaccard of the movie.
             jac_list.append(jac) # for histogram
@@ -559,7 +559,7 @@ def category_interval():
 def category_all():
     n = 100
     e = CategoryCorrExperiment(setup_mode='lightweight', approach='cf')
-    [avgJacTotal, jac_list] = e.test_category_accuracy(N=n)
+    [avgJacTotal, jac_list] = e.test_category_accuracy(N=n, randomized=False)
     #hit_list = CategoryCorrExperiment.get_hit_list(N=n, harsh=h)
     print "Average Jaccard Distance of Genre-Wiki = %f [N=%d]" % (avgJacTotal, n)
     CategoryCorrExperiment.draw_histogram(jac_list, N=n, approach=e.approach)
@@ -583,8 +583,8 @@ def main():
     #ex.create_proximity_matrices()
     #ex.test_corr_sparsity(draw=True, interval=100)
 
-    topN_all()
-    #topN_interval()
+    #topN_all()
+    topN_interval()
     #category_interval()
     #category_all()
     #fanhypo()
